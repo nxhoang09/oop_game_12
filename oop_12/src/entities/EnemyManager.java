@@ -23,7 +23,6 @@ public class EnemyManager {
 	public void loadEnemies(Level level) {
 		this.currentLevel = level;
 	}
-
 	public void update(int[][] lvlData) {
 		boolean isAnyActive = false;
 		for (Crabby c : currentLevel.getCrabs())

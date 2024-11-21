@@ -335,12 +335,12 @@ public class Playing extends State implements Statemethods {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if (!gameOver) {
-            if (e.getButton() == MouseEvent.BUTTON1)
-                player.setAttacking(true);
-            else if (e.getButton() == MouseEvent.BUTTON3)
-                player.powerAttack();
-        }
+//        if (!gameOver) {
+//            if (e.getButton() == MouseEvent.BUTTON1)
+//                player.setAttacking(true);
+//            else if (e.getButton() == MouseEvent.BUTTON3)
+//                player.powerAttack();
+//        }
     }
 
     @Override
@@ -354,11 +354,17 @@ public class Playing extends State implements Statemethods {
 
                     player.setRight(true);
                     break;
-                case KeyEvent.VK_SPACE:
+                case KeyEvent.VK_W:
                     player.setJump(true);
                     break;
                 case KeyEvent.VK_ESCAPE:
                     paused = !paused;
+                    break;
+                case KeyEvent.VK_ENTER:
+                	 player.setAttacking(true);
+                    break;
+                case KeyEvent.VK_SPACE:
+                	 player.powerAttack();
             }
     }
 
@@ -372,7 +378,7 @@ public class Playing extends State implements Statemethods {
                 case KeyEvent.VK_D:
                     player.setRight(false);
                     break;
-                case KeyEvent.VK_SPACE:
+                case KeyEvent.VK_W:
                     player.setJump(false);
                     break;
             }
