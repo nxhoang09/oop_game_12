@@ -65,6 +65,7 @@ public class Game implements Runnable {
             case OPTIONS -> gameOptions.update();
             case CREDITS -> credits.update();
             case QUIT -> System.exit(0);
+            //hyt6gtrfr5
         }
     }
 
