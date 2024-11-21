@@ -53,7 +53,7 @@ public class Game implements Runnable {
     private void startGameLoop() {
         gameThread = new Thread(this);
         gameThread.start();
-        //test
+        //test2
     }
 
     public void update() {
