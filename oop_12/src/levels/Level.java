@@ -116,6 +116,9 @@ public class Level {
 	public int getLvlOffset() {
 		return maxLvlOffsetX;
 	}
+	public ArrayList<BackgroundTree> getTrees() {
+		return trees;
+	}
 
 	public Point getPlayerSpawn() {
 		return playerSpawn;
@@ -149,9 +152,7 @@ public class Level {
 		return pinkstars;
 	}
 
-	public ArrayList<BackgroundTree> getTrees() {
-		return trees;
-	}
+	
 
 	public ArrayList<Grass> getGrass() {
 		return grass;
