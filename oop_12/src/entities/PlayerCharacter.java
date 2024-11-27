@@ -7,22 +7,18 @@ import static utilz.Constants.PlayerConstants.*;
 
 public enum PlayerCharacter {
 
-    PIRATE(5, 6, 3, 1, 3, 4, 8,
-            0, 1, 2, 3, 4, 5, 6,
-            LoadSave.PLAYER_PIRATE, 7, 8, 64, 40,
-            20, 27, 21, 4),
-//    ORC(6, 8, 8, 8, 6, 4, 4,
-//            0, 1, 1, 1, 2, 4, 5,
-//            LoadSave.PLAYER_ORC, 6, 8, 100, 100,
-//            13, 15, 44, 42),
+    DARK_KNIGHT(5, 8, 3, 1, 3, 4, 6,
+            0, 1, 2, 3, 5, 6, 7,
+            LoadSave.PLAYER_DARK_KNIGHT, 9, 8, 64, 64,
+            18, 25, 25, 23),
     HERO(7, 8, 3, 2, 6, 4, 12,
             0, 1, 2, 3, 4, 5, 6,
             LoadSave.PLAYER_HERO, 7, 12, 96, 84,
             25, 30, 35, 26),
-    KNIGHT(5, 8, 3, 1, 3, 1, 6,
+    KNIGHT(5, 8, 3, 1, 3, 4, 6,
             0, 1, 2, 3, 5, 6, 7,
-            LoadSave.PLAYER_KNIGHT, 9, 8, 86, 86,
-            23, 30, 33, 31);
+            LoadSave.PLAYER_KNIGHT, 9, 8, 64, 64,
+            18, 25, 25, 23);
 
 
     public int spriteA_IDLE, spriteA_RUNNING, spriteA_JUMP, spriteA_FALLING, spriteA_ATTACK, spriteA_HIT, spriteA_DEAD;
