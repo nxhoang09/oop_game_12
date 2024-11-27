@@ -71,7 +71,7 @@ public class Level {
 		else
 			lvlData[y][x] = redValue;
 		switch (redValue) {
-		case 0, 1, 2, 3, 30, 31, 33, 34, 35, 36, 37, 38, 39 -> 
+		case 3, 5, 8, 9, 10 -> 
 		grass.add(new Grass((int) (x * Game.TILES_SIZE), (int) (y * Game.TILES_SIZE) - Game.TILES_SIZE, getRndGrassType(x)));
 		}
 	}
