@@ -38,7 +38,7 @@ public class PlayerSelection extends State implements Statemethods {
         int i = 0;
         characterAnimations[i++] = new CharacterAnimation(PlayerCharacter.PIRATE);
         characterAnimations[i++] = new CharacterAnimation(PlayerCharacter.HERO);
-        characterAnimations[i++] = new CharacterAnimation(PlayerCharacter.SOLDIER);
+        characterAnimations[i++] = new CharacterAnimation(PlayerCharacter.KNIGHT);
 
     }
 

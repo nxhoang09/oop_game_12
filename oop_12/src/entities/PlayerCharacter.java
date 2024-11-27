@@ -19,10 +19,10 @@ public enum PlayerCharacter {
             0, 1, 2, 3, 4, 5, 6,
             LoadSave.PLAYER_HERO, 7, 12, 96, 84,
             25, 30, 35, 26),
-    SOLDIER(6, 8, 8, 8, 6, 4, 4,
-            0, 1, 1, 1, 2, 5, 6,
-            LoadSave.PLAYER_SOLDIER, 7, 8, 100, 100,
-            12, 18, 44, 39);
+    KNIGHT(5, 8, 3, 1, 3, 1, 6,
+            0, 1, 2, 3, 5, 6, 7,
+            LoadSave.PLAYER_KNIGHT, 9, 8, 86, 86,
+            23, 30, 33, 31);
 
 
     public int spriteA_IDLE, spriteA_RUNNING, spriteA_JUMP, spriteA_FALLING, spriteA_ATTACK, spriteA_HIT, spriteA_DEAD;
