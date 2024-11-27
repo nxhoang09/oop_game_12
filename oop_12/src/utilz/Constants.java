@@ -218,9 +218,9 @@ public class Constants {
 		public static final int LAYER_IMG_HEIGHT_DEFAULT = 416;
 		public static final int SMALL_CLOUD_WIDTH_DEFAULT = 74;
 		public static final int SMALL_CLOUD_HEIGHT_DEFAULT = 24;
-				public static final float LAYER_IMG_WIDTH_DEFAULT = 704;
+		public static final float LAYER_IMG_WIDTH_DEFAULT = 704;
 		
-				public static final int LAYER_IMG_WIDTH = (int) (LAYER_IMG_WIDTH_DEFAULT * Game.SCALE);
+		public static final int LAYER_IMG_WIDTH = (int) (LAYER_IMG_WIDTH_DEFAULT * Game.SCALE);
 		public static final int LAYER_IMG_HEIGHT = (int) (LAYER_IMG_HEIGHT_DEFAULT * Game.SCALE);
 		public static final int SMALL_CLOUD_WIDTH = (int) (SMALL_CLOUD_WIDTH_DEFAULT * Game.SCALE);
 		public static final int SMALL_CLOUD_HEIGHT = (int) (SMALL_CLOUD_HEIGHT_DEFAULT * Game.SCALE);
