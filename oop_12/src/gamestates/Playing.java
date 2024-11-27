@@ -360,7 +360,7 @@ public class Playing extends State implements Statemethods {
                 case KeyEvent.VK_ESCAPE:
                     paused = !paused;
                     break;
-                case KeyEvent.VK_ENTER:
+                case KeyEvent.VK_J:
                 	 player.setAttacking(true);
                     break;
                 case KeyEvent.VK_SPACE:

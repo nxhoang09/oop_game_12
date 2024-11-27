@@ -14,7 +14,7 @@ import javax.imageio.ImageIO;
 public class LoadSave {
 
     public static final String PLAYER_PIRATE = "player_sprites.png";
-    public static final String PLAYER_ORC = "player_orc.png";
+    public static final String PLAYER_HERO = "player_hero.png";
     public static final String PLAYER_SOLDIER = "player_soldier.png";
     public static final String LEVEL_ATLAS = "outside_sprites.png";
     public static final String MENU_BUTTONS = "button_atlas.png";
