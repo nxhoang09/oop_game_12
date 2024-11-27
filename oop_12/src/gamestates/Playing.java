@@ -45,7 +45,7 @@ public class Playing extends State implements Statemethods {
     private int rightBorder = (int) (0.75 * Game.GAME_WIDTH);
     private int maxLvlOffsetX;
 
-    private BufferedImage backgroundImg, bigCloud, smallCloud, shipImgs[];
+    private BufferedImage backgroundImg, layerImg, smallCloud, shipImgs[];
     private BufferedImage[] questionImgs, exclamationImgs;
     private ArrayList<DialogueEffect> dialogEffects = new ArrayList<>();
 
@@ -68,7 +68,7 @@ public class Playing extends State implements Statemethods {
     // you want
     // it.
 
-    private boolean drawShip = true;
+    private boolean drawShip = false;
     private int shipAni, shipTick, shipDir = 1;
     private float shipHeightDelta, shipHeightChange = 0.05f * Game.SCALE;
 
@@ -77,11 +77,11 @@ public class Playing extends State implements Statemethods {
         initClasses();
 
         backgroundImg = LoadSave.GetSpriteAtlas(LoadSave.PLAYING_BG_IMG);
-        bigCloud = LoadSave.GetSpriteAtlas(LoadSave.BIG_CLOUDS);
+        layerImg = LoadSave.GetSpriteAtlas(LoadSave.LAYER_IMG);
         smallCloud = LoadSave.GetSpriteAtlas(LoadSave.SMALL_CLOUDS);
         smallCloudsPos = new int[8];
         for (int i = 0; i < smallCloudsPos.length; i++)
-            smallCloudsPos[i] = (int) (90 * Game.SCALE) + rnd.nextInt((int) (100 * Game.SCALE));
+            smallCloudsPos[i] = (int) (60 * Game.SCALE) + rnd.nextInt((int) (40 * Game.SCALE));
 
         shipImgs = new BufferedImage[4];
         BufferedImage temp = LoadSave.GetSpriteAtlas(LoadSave.SHIP);
@@ -277,11 +277,11 @@ public class Playing extends State implements Statemethods {
     }
 
     private void drawClouds(Graphics g) {
-        for (int i = 0; i < 4; i++)
-            g.drawImage(bigCloud, i * BIG_CLOUD_WIDTH - (int) (xLvlOffset * 0.3), (int) (204 * Game.SCALE), BIG_CLOUD_WIDTH, BIG_CLOUD_HEIGHT, null);
+        for (int i = 0; i < 2; i++)
+            g.drawImage(layerImg, i * LAYER_IMG_WIDTH - (int) (xLvlOffset * 0.3), (int) (80* Game.SCALE), LAYER_IMG_WIDTH, LAYER_IMG_HEIGHT, null);
 
         for (int i = 0; i < smallCloudsPos.length; i++)
-            g.drawImage(smallCloud, SMALL_CLOUD_WIDTH * 4 * i - (int) (xLvlOffset * 0.7), smallCloudsPos[i], SMALL_CLOUD_WIDTH, SMALL_CLOUD_HEIGHT, null);
+            g.drawImage(smallCloud, SMALL_CLOUD_WIDTH * 2 * i - (int) (xLvlOffset * 0.7), smallCloudsPos[i], SMALL_CLOUD_WIDTH, SMALL_CLOUD_HEIGHT, null);
     }
 
     public void setGameCompleted() {
