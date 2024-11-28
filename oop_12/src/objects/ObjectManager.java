@@ -21,7 +21,7 @@ public class ObjectManager {
 	private Playing playing;
 	private BufferedImage[][] potionImgs, containerImgs;
 	private BufferedImage[] cannonImgs, grassImgs;
-	private BufferedImage[][] treeImgs;
+	private BufferedImage[][] decorImgs;
 	private BufferedImage spikeImg, cannonBallImg;
 	private ArrayList<Potion> potions;
 	private ArrayList<GameContainer> containers;
@@ -109,14 +109,14 @@ public class ObjectManager {
 			cannonImgs[i] = temp.getSubimage(i * 40, 0, 40, 26);
 
 		cannonBallImg = LoadSave.GetSpriteAtlas(LoadSave.CANNON_BALL);
-		treeImgs = new BufferedImage[2][4];
-		BufferedImage treeOneImg = LoadSave.GetSpriteAtlas(LoadSave.TREE_ONE_ATLAS);
+		decorImgs = new BufferedImage[2][4];
+		BufferedImage decorOneImg = LoadSave.GetSpriteAtlas(LoadSave.DECOR_ONE_ATLAS);
 		for (int i = 0; i < 4; i++)
-			treeImgs[0][i] = treeOneImg.getSubimage(i * 64, 0, 64, 64);
+			decorImgs[0][i] = decorOneImg.getSubimage(i * 64, 0, 64, 64);
 
-		BufferedImage treeTwoImg = LoadSave.GetSpriteAtlas(LoadSave.TREE_TWO_ATLAS);
+		BufferedImage decorTwoImg = LoadSave.GetSpriteAtlas(LoadSave.DECOR_TWO_ATLAS);
 		for (int i = 0; i < 4; i++)
-			treeImgs[1][i] = treeTwoImg.getSubimage(i * 62, 0, 62, 54);
+			decorImgs[1][i] = decorTwoImg.getSubimage(i * 32, 0, 32, 32);
 
 		BufferedImage grassTemp = LoadSave.GetSpriteAtlas(LoadSave.GRASS_ATLAS);
 		grassImgs = new BufferedImage[2];
@@ -125,7 +125,7 @@ public class ObjectManager {
 	}
 
 	public void update(int[][] lvlData, Player player) {
-		updateBackgroundTrees();
+		updateBackgroundDecors();
 		for (Potion p : potions)
 			if (p.isActive())
 				p.update();
@@ -139,8 +139,8 @@ public class ObjectManager {
 
 	}
 
-	private void updateBackgroundTrees() {
-		for (BackgroundTree bt : currentLevel.getTrees())
+	private void updateBackgroundDecors() {
+		for (BackgroundDecor bt : currentLevel.getDecors())
 			bt.update();
 	}
 
@@ -208,14 +208,14 @@ public class ObjectManager {
 			g.drawImage(grassImgs[grass.getType()], grass.getX() - xLvlOffset, grass.getY(), (int) (32 * Game.SCALE), (int) (32 * Game.SCALE), null);
 	}
 
-	public void drawBackgroundTrees(Graphics g, int xLvlOffset) {
-		for (BackgroundTree bt : currentLevel.getTrees()) {
+	public void drawBackgroundDecors(Graphics g, int xLvlOffset) {
+		for (BackgroundDecor bt : currentLevel.getDecors()) {
 
 			int type = bt.getType();
 			if (type == 9)
 				type = 8;
-			g.drawImage(treeImgs[type - 7][bt.getAniIndex()], bt.getX() - xLvlOffset + GetTreeOffsetX(bt.getType()), (int) (bt.getY() + GetTreeOffsetY(bt.getType())), GetTreeWidth(bt.getType()),
-					GetTreeHeight(bt.getType()), null);
+			g.drawImage(decorImgs[type - 7][bt.getAniIndex()], bt.getX() - xLvlOffset + GetDecorOffsetX(bt.getType()), (int) (bt.getY() + GetDecorOffsetY(bt.getType())), GetDecorWidth(bt.getType()),
+					GetDecorHeight(bt.getType()), null);
 		}
 	}
 

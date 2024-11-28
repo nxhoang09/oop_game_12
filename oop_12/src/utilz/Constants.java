@@ -42,9 +42,9 @@ public class Constants {
 		public static final int SPIKE = 4;
 		public static final int CANNON_LEFT = 5;
 		public static final int CANNON_RIGHT = 6;
-		public static final int TREE_ONE = 7;
-		public static final int TREE_TWO = 8;
-		public static final int TREE_THREE = 9;
+		public static final int DECOR_ONE = 7;
+		public static final int DECOR_TWO = 8;
+		public static final int DECOR_THREE = 9;
 
 		public static final int RED_POTION_VALUE = 15;
 		public static final int BLUE_POTION_VALUE = 10;
@@ -81,51 +81,52 @@ public class Constants {
 			return 1;
 		}
 
-		public static int GetTreeOffsetX(int treeType) {
-			switch (treeType) {
-			case TREE_ONE:
-				return (Game.TILES_SIZE / 2) - (GetTreeWidth(treeType) / 2);
+		public static int GetDecorOffsetX(int decorType) {
+			switch (decorType) {
+			case DECOR_ONE:
+				return (Game.TILES_SIZE / 2) - (GetDecorWidth(decorType) / 2);
 
-			case TREE_TWO:
-				return (int) (Game.TILES_SIZE / 2.5f);
-			case TREE_THREE:
+			case DECOR_TWO:
+				//return (int) (Game.TILES_SIZE / 2.5f);
+				return (Game.TILES_SIZE / 2) - (GetDecorWidth(decorType) / 2);
+			case DECOR_THREE:
 				return (int) (Game.TILES_SIZE / 1.65f);
 			}
 
 			return 0;
 		}
 
-		public static int GetTreeOffsetY(int treeType) {
+		public static int GetDecorOffsetY(int decorType) {
 
-			switch (treeType) {
-			case TREE_ONE:
-				return -GetTreeHeight(treeType) + (int) (Game.TILES_SIZE * 1.4);
-			case TREE_TWO, TREE_THREE:
-				return -GetTreeHeight(treeType) + (int) (Game.TILES_SIZE / 1.25f);
+			switch (decorType) {
+			case DECOR_ONE:
+				return -GetDecorHeight(decorType) + (int) (Game.TILES_SIZE * 1.4);
+			case DECOR_TWO, DECOR_THREE:
+				return -GetDecorHeight(decorType) + (int) (Game.TILES_SIZE * 1.1 );
 			}
 			return 0;
 
 		}
 
-		public static int GetTreeWidth(int treeType) {
-			switch (treeType) {
-			case TREE_ONE:
+		public static int GetDecorWidth(int decorType) {
+			switch (decorType) {
+			case DECOR_ONE:
 				return (int) (64 * Game.SCALE);
-			case TREE_TWO:
-				return (int) (62 * Game.SCALE);
-			case TREE_THREE:
+			case DECOR_TWO:
+				return (int) (32 * Game.SCALE);
+			case DECOR_THREE:
 				return -(int) (62 * Game.SCALE);
 
 			}
 			return 0;
 		}
 
-		public static int GetTreeHeight(int treeType) {
-			switch (treeType) {
-			case TREE_ONE:
+		public static int GetDecorHeight(int decorType) {
+			switch (decorType) {
+			case DECOR_ONE:
 				return (int) (int) (64 * Game.SCALE);
-			case TREE_TWO, TREE_THREE:
-				return (int) (54 * Game.SCALE);
+			case DECOR_TWO, DECOR_THREE:
+				return (int) (32 * Game.SCALE);
 
 			}
 			return 0;

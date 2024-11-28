@@ -258,7 +258,7 @@ public class Playing extends State implements Statemethods {
             g.drawImage(shipImgs[shipAni], (int) (100 * Game.SCALE) - xLvlOffset, (int) ((288 * Game.SCALE) + shipHeightDelta), (int) (78 * Game.SCALE), (int) (72 * Game.SCALE), null);
 
         levelManager.draw(g, xLvlOffset);
-        objectManager.drawBackgroundTrees(g, xLvlOffset);
+        objectManager.drawBackgroundDecors(g, xLvlOffset);
         objectManager.draw(g, xLvlOffset);
         enemyManager.draw(g, xLvlOffset);
         player.render(g, xLvlOffset);

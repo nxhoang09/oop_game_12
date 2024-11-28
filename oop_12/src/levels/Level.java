@@ -9,7 +9,7 @@ import entities.Crabby;
 import entities.Pinkstar;
 import entities.Shark;
 import main.Game;
-import objects.BackgroundTree;
+import objects.BackgroundDecor;
 import objects.Cannon;
 import objects.GameContainer;
 import objects.Grass;
@@ -31,7 +31,7 @@ public class Level {
 	private ArrayList<Spike> spikes = new ArrayList<>();
 	private ArrayList<GameContainer> containers = new ArrayList<>();
 	private ArrayList<Cannon> cannons = new ArrayList<>();
-	private ArrayList<BackgroundTree> trees = new ArrayList<>();
+	private ArrayList<BackgroundDecor> decors = new ArrayList<>();
 	private ArrayList<Grass> grass = new ArrayList<>();
 
 	private int lvlTilesWide;
@@ -95,7 +95,7 @@ public class Level {
 		case BOX, BARREL -> containers.add(new GameContainer(x * Game.TILES_SIZE, y * Game.TILES_SIZE, blueValue));
 		case SPIKE -> spikes.add(new Spike(x * Game.TILES_SIZE, y * Game.TILES_SIZE, SPIKE));
 		case CANNON_LEFT, CANNON_RIGHT -> cannons.add(new Cannon(x * Game.TILES_SIZE, y * Game.TILES_SIZE, blueValue));
-		case TREE_ONE, TREE_TWO, TREE_THREE -> trees.add(new BackgroundTree(x * Game.TILES_SIZE, y * Game.TILES_SIZE, blueValue));
+		case DECOR_ONE, DECOR_TWO, DECOR_THREE -> decors.add(new BackgroundDecor(x * Game.TILES_SIZE, y * Game.TILES_SIZE, blueValue));
 		}
 	}
 
@@ -116,8 +116,8 @@ public class Level {
 	public int getLvlOffset() {
 		return maxLvlOffsetX;
 	}
-	public ArrayList<BackgroundTree> getTrees() {
-		return trees;
+	public ArrayList<BackgroundDecor> getDecors() {
+		return decors;
 	}
 
 	public Point getPlayerSpawn() {
