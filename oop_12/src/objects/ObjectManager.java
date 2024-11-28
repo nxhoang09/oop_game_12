@@ -112,7 +112,7 @@ public class ObjectManager {
 		treeImgs = new BufferedImage[2][4];
 		BufferedImage treeOneImg = LoadSave.GetSpriteAtlas(LoadSave.TREE_ONE_ATLAS);
 		for (int i = 0; i < 4; i++)
-			treeImgs[0][i] = treeOneImg.getSubimage(i * 39, 0, 39, 92);
+			treeImgs[0][i] = treeOneImg.getSubimage(i * 25, 0, 25, 44);
 
 		BufferedImage treeTwoImg = LoadSave.GetSpriteAtlas(LoadSave.TREE_TWO_ATLAS);
 		for (int i = 0; i < 4; i++)

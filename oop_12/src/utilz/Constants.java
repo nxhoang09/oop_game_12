@@ -85,6 +85,7 @@ public class Constants {
 			switch (treeType) {
 			case TREE_ONE:
 				return (Game.TILES_SIZE / 2) - (GetTreeWidth(treeType) / 2);
+
 			case TREE_TWO:
 				return (int) (Game.TILES_SIZE / 2.5f);
 			case TREE_THREE:
@@ -98,7 +99,7 @@ public class Constants {
 
 			switch (treeType) {
 			case TREE_ONE:
-				return -GetTreeHeight(treeType) + Game.TILES_SIZE * 2;
+				return -GetTreeHeight(treeType) + (int) (Game.TILES_SIZE * 1.2);
 			case TREE_TWO, TREE_THREE:
 				return -GetTreeHeight(treeType) + (int) (Game.TILES_SIZE / 1.25f);
 			}
@@ -109,7 +110,7 @@ public class Constants {
 		public static int GetTreeWidth(int treeType) {
 			switch (treeType) {
 			case TREE_ONE:
-				return (int) (39 * Game.SCALE);
+				return (int) (25 * Game.SCALE);
 			case TREE_TWO:
 				return (int) (62 * Game.SCALE);
 			case TREE_THREE:
@@ -122,7 +123,7 @@ public class Constants {
 		public static int GetTreeHeight(int treeType) {
 			switch (treeType) {
 			case TREE_ONE:
-				return (int) (int) (92 * Game.SCALE);
+				return (int) (int) (60 * Game.SCALE);
 			case TREE_TWO, TREE_THREE:
 				return (int) (54 * Game.SCALE);
 
