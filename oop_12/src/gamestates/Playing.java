@@ -91,7 +91,7 @@ public class Playing extends State implements Statemethods {
         loadDialogue();
         calcLvlOffset();
         loadStartLevel();
-//        setDrawRainBoolean();
+        setDrawRainBoolean();
     }
 
     private void loadDialogue() {
@@ -175,8 +175,9 @@ public class Playing extends State implements Statemethods {
             player.update();
         else {
             updateDialogue();
-//            if (drawRain)
-//                rain.update(xLvlOffset);
+            //making animation for rain
+            if (drawRain)
+                rain.update(xLvlOffset);
             levelManager.update();
             objectManager.update(levelManager.getCurrentLevel().getLevelData(), player);
             player.update();
@@ -250,7 +251,7 @@ public class Playing extends State implements Statemethods {
         g.drawImage(backgroundImg, 0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT, null);
 
         drawClouds(g);
-//        if (drawRain)
+        if (drawRain)
 //            rain.draw(g, xLvlOffset);
 
         if (drawShip)
@@ -299,7 +300,7 @@ public class Playing extends State implements Statemethods {
         playerDying = false;
         drawRain = false;
 
-//        setDrawRainBoolean();
+        setDrawRainBoolean();
 
         player.resetAll();
         enemyManager.resetAllEnemies();
