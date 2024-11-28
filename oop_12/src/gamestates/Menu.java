@@ -7,11 +7,13 @@ import java.awt.image.BufferedImage;
 
 import main.Game;
 import ui.MenuButton;
+import ui.QSButton;
 import utilz.LoadSave;
 
 public class Menu extends State implements Statemethods {
 
     private MenuButton[] buttons = new MenuButton[4];
+    private QSButton qs =  new QSButton((int) (Game.GAME_WIDTH  - 70 * Game.SCALE) ,  (int) (Game.GAME_HEIGHT - 70 * Game.SCALE) ,  Gamestate.QS);
     private BufferedImage backgroundImg, backgroundImgPink;
     private int menuX, menuY, menuWidth, menuHeight;
 
@@ -40,6 +42,7 @@ public class Menu extends State implements Statemethods {
 
     @Override
     public void update() {
+        qs.update();
         for (MenuButton mb : buttons)
             mb.update();
     }
@@ -48,22 +51,31 @@ public class Menu extends State implements Statemethods {
     public void draw(Graphics g) {
         g.drawImage(backgroundImgPink, 0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT, null);
         g.drawImage(backgroundImg, menuX, menuY, menuWidth, menuHeight, null);
-
+        qs.draw(g);
         for (MenuButton mb : buttons)
             mb.draw(g);
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
+        if (isIn(e, qs)) {
+            qs.setMousePressed(true);
+        }
         for (MenuButton mb : buttons) {
             if (isIn(e, mb)) {
                 mb.setMousePressed(true);
             }
-        }
+        }   
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
+        if (isIn(e, qs)) {
+            if (qs.isMousePressed())
+                qs.applyGamestate();
+            if (qs.getState() == Gamestate.PLAYING)
+                game.getAudioPlayer().setLevelSong(game.getPlaying().getLevelManager().getLevelIndex());
+        }
         for (MenuButton mb : buttons) {
             if (isIn(e, mb)) {
                 if (mb.isMousePressed())
@@ -77,6 +89,7 @@ public class Menu extends State implements Statemethods {
     }
 
     private void resetButtons() {
+        qs.resetBools();
         for (MenuButton mb : buttons)
             mb.resetBools();
 
@@ -84,9 +97,13 @@ public class Menu extends State implements Statemethods {
 
     @Override
     public void mouseMoved(MouseEvent e) {
+        qs.setMouseOver(false);
         for (MenuButton mb : buttons)
             mb.setMouseOver(false);
-
+        
+        if (isIn(e, qs)) {
+            qs.setMouseOver(true);
+        }
         for (MenuButton mb : buttons)
             if (isIn(e, mb)) {
                 mb.setMouseOver(true);
