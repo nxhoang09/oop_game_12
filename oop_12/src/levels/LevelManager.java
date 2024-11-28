@@ -71,10 +71,10 @@ public class LevelManager {
 	}
 
 	public void update() {
-		updateWaterAnimation();
+		updateLavaAnimation();
 	}
 
-	private void updateWaterAnimation() {
+	private void updateLavaAnimation() {
 		aniTick++;
 		if (aniTick >= 40) {
 			aniTick = 0;

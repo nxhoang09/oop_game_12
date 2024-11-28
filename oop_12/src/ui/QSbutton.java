@@ -1,5 +1,5 @@
 package ui;
 
-public class QSbutton {
+public class QSButton {
     
 }
