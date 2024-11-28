@@ -12,7 +12,8 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 
 public class LoadSave {
-
+    public static final String QS_menu = "QS_menu.png";
+    public static final String QS_BUTTON = "QSimg.png";
     public static final String PLAYER_PIRATE = "player_sprites.png";
     public static final String PLAYER_HERO = "player_hero.png";
     public static final String PLAYER_KNIGHT = "player_knight.png";
