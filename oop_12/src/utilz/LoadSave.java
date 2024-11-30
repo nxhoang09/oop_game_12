@@ -17,6 +17,8 @@ public class LoadSave {
     public static final String PLAYER_PIRATE = "player_sprites.png";
     public static final String PLAYER_HERO = "player_hero.png";
     public static final String PLAYER_KNIGHT = "player_knight.png";
+    public static final String PLAYER_SAMURAI = "player_samurai.png";
+    public static final String PLAYER_WARRIOR = "player_warrior.png";
     public static final String PLAYER_DARK_KNIGHT = "player_dark_knight.png";
     public static final String LEVEL_ATLAS = "outside_sprites.png";
     public static final String MENU_BUTTONS = "button_atlas.png";
