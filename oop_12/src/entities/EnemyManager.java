@@ -12,7 +12,7 @@ import static utilz.Constants.EnemyConstants.*;
 public class EnemyManager {
 
 	private Playing playing;
-	private BufferedImage[][] snakeArr, GORDONArr, WOLFArr;
+	private BufferedImage[][] snakeArr, gordonArr, wolfArr;
 	private Level currentLevel;
 
 	public EnemyManager(Playing playing) {
@@ -49,24 +49,24 @@ public class EnemyManager {
 
 	public void draw(Graphics g, int xLvlOffset) {
 		drawSnakes(g, xLvlOffset);
-		drawGORDONs(g, xLvlOffset);
-		drawWOLFs(g, xLvlOffset);
+		drawGordons(g, xLvlOffset);
+		drawWolfs(g, xLvlOffset);
 	}
 
-	private void drawWOLFs(Graphics g, int xLvlOffset) {
+	private void drawWolfs(Graphics g, int xLvlOffset) {
 		for (Wolf s : currentLevel.getWolfs())
 			if (s.isActive()) {
-				g.drawImage(WOLFArr[s.getState()][s.getAniIndex()], (int) s.getHitbox().x - xLvlOffset - WOLF_DRAWOFFSET_X + s.flipX(),
+				g.drawImage(wolfArr[s.getState()][s.getAniIndex()], (int) s.getHitbox().x - xLvlOffset - WOLF_DRAWOFFSET_X + s.flipX(),
 						(int) s.getHitbox().y - WOLF_DRAWOFFSET_Y + (int) s.getPushDrawOffset(), WOLF_WIDTH * s.flipW(), WOLF_HEIGHT, null);
 //				s.drawHitbox(g, xLvlOffset);
 //				s.drawAttackBox(g, xLvlOffset);
 			}
 	}
 
-	private void drawGORDONs(Graphics g, int xLvlOffset) {
+	private void drawGordons(Graphics g, int xLvlOffset) {
 		for (Gordon p : currentLevel.getGordons())
 			if (p.isActive()) {
-				g.drawImage(GORDONArr[p.getState()][p.getAniIndex()], (int) p.getHitbox().x - xLvlOffset - GORDON_DRAWOFFSET_X + p.flipX(),
+				g.drawImage(gordonArr[p.getState()][p.getAniIndex()], (int) p.getHitbox().x - xLvlOffset - GORDON_DRAWOFFSET_X + p.flipX(),
 						(int) p.getHitbox().y - GORDON_DRAWOFFSET_Y + (int) p.getPushDrawOffset(), GORDON_WIDTH * p.flipW(), GORDON_HEIGHT, null);
 //				p.drawHitbox(g, xLvlOffset);
 			}
@@ -119,8 +119,8 @@ public class EnemyManager {
 
 	private void loadEnemyImgs() {
 		snakeArr = getImgArr(LoadSave.GetSpriteAtlas(LoadSave.SNAKE), 6, 5, SNAKE_WIDTH_DEFAULT, SNAKE_HEIGHT_DEFAULT);
-		GORDONArr = getImgArr(LoadSave.GetSpriteAtlas(LoadSave.GORDON), 8, 5, GORDON_WIDTH_DEFAULT, GORDON_HEIGHT_DEFAULT);
-		WOLFArr = getImgArr(LoadSave.GetSpriteAtlas(LoadSave.WOLF), 7, 5, WOLF_WIDTH_DEFAULT, WOLF_HEIGHT_DEFAULT);
+		gordonArr = getImgArr(LoadSave.GetSpriteAtlas(LoadSave.GORDON), 8, 5, GORDON_WIDTH_DEFAULT, GORDON_HEIGHT_DEFAULT);
+		wolfArr = getImgArr(LoadSave.GetSpriteAtlas(LoadSave.WOLF), 7, 5, WOLF_WIDTH_DEFAULT, WOLF_HEIGHT_DEFAULT);
 	}
 
 	private BufferedImage[][] getImgArr(BufferedImage atlas, int xSize, int ySize, int spriteW, int spriteH) {

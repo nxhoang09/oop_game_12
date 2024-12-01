@@ -5,7 +5,6 @@ import java.awt.Point;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-//import entities.Crabby;
 import entities.Gordon;
 import entities.Wolf;
 import entities.Snake;
