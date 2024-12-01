@@ -12,14 +12,19 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 
 public class LoadSave {
-    public static final String QS_menu = "QS_menu.png";
-    public static final String QS_BUTTON = "QSimg.png";
-    public static final String PLAYER_PIRATE = "player_sprites.png";
+    //Image of 3 main players
     public static final String PLAYER_HERO = "player_hero.png";
-    public static final String PLAYER_KNIGHT = "player_knight.png";
     public static final String PLAYER_SAMURAI = "player_samurai.png";
     public static final String PLAYER_WARRIOR = "player_warrior.png";
-    public static final String PLAYER_DARK_KNIGHT = "player_dark_knight.png";
+    //Enemies
+//    public static final String CRABBY_SPRITE = "crabby_sprite.png";
+    public static final String GORDON = "Gordon(128x128).png";
+    public static final String WOLF = "Wolf(64x64).png";
+    public static final String SNAKE = "snake(64x64).png";
+    public static final String BAT = "bat(80x80).png";
+
+    public static final String QS_menu = "QS_menu.png";
+    public static final String QS_BUTTON = "QSimg.png";
     public static final String LEVEL_ATLAS = "outside_sprites.png";
     public static final String MENU_BUTTONS = "button_atlas.png";
     public static final String MENU_BACKGROUND = "menu_background.png";
@@ -31,7 +36,6 @@ public class LoadSave {
     public static final String PLAYING_BG_IMG = "playing_bg_img.png";
     public static final String LAYER_IMG = "layer_img.png";
     public static final String SMALL_CLOUDS = "small_clouds.png";
-    public static final String CRABBY_SPRITE = "crabby_sprite.png";
     public static final String STATUS_BAR = "health_power_bar.png";
     public static final String COMPLETED_IMG = "completed_sprite.png";
     public static final String POTION_ATLAS = "potions_sprites.png";
@@ -41,10 +45,8 @@ public class LoadSave {
     public static final String CANNON_BALL = "ball.png";
     public static final String DEATH_SCREEN = "death_screen.png";
     public static final String OPTIONS_MENU = "options_background.png";
-    public static final String PINKSTAR_ATLAS = "pinkstar_atlas.png";
     public static final String QUESTION_ATLAS = "question_atlas.png";
     public static final String EXCLAMATION_ATLAS = "exclamation_atlas.png";
-    public static final String SHARK_ATLAS = "shark_atlas.png";
     public static final String CREDITS = "credits_list.png";
     public static final String GRASS_ATLAS = "grass_atlas.png";
     public static final String DECOR_ONE_ATLAS = "decor_one_atlas.png";

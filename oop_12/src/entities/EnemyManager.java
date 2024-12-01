@@ -12,7 +12,7 @@ import static utilz.Constants.EnemyConstants.*;
 public class EnemyManager {
 
 	private Playing playing;
-	private BufferedImage[][] crabbyArr, pinkstarArr, sharkArr;
+	private BufferedImage[][] snakeArr, GORDONArr, WOLFArr;
 	private Level currentLevel;
 
 	public EnemyManager(Playing playing) {
@@ -25,19 +25,19 @@ public class EnemyManager {
 	}
 	public void update(int[][] lvlData) {
 		boolean isAnyActive = false;
-		for (Crabby c : currentLevel.getCrabs())
+		for (Snake c : currentLevel.getSnakes())
 			if (c.isActive()) {
 				c.update(lvlData, playing);
 				isAnyActive = true;
 			}
 
-		for (Pinkstar p : currentLevel.getPinkstars())
+		for (Gordon p : currentLevel.getGordons())
 			if (p.isActive()) {
 				p.update(lvlData, playing);
 				isAnyActive = true;
 			}
 
-		for (Shark s : currentLevel.getSharks())
+		for (Wolf s : currentLevel.getWolfs())
 			if (s.isActive()) {
 				s.update(lvlData, playing);
 				isAnyActive = true;
@@ -48,36 +48,36 @@ public class EnemyManager {
 	}
 
 	public void draw(Graphics g, int xLvlOffset) {
-		drawCrabs(g, xLvlOffset);
-		drawPinkstars(g, xLvlOffset);
-		drawSharks(g, xLvlOffset);
+		drawSnakes(g, xLvlOffset);
+		drawGORDONs(g, xLvlOffset);
+		drawWOLFs(g, xLvlOffset);
 	}
 
-	private void drawSharks(Graphics g, int xLvlOffset) {
-		for (Shark s : currentLevel.getSharks())
+	private void drawWOLFs(Graphics g, int xLvlOffset) {
+		for (Wolf s : currentLevel.getWolfs())
 			if (s.isActive()) {
-				g.drawImage(sharkArr[s.getState()][s.getAniIndex()], (int) s.getHitbox().x - xLvlOffset - SHARK_DRAWOFFSET_X + s.flipX(),
-						(int) s.getHitbox().y - SHARK_DRAWOFFSET_Y + (int) s.getPushDrawOffset(), SHARK_WIDTH * s.flipW(), SHARK_HEIGHT, null);
+				g.drawImage(WOLFArr[s.getState()][s.getAniIndex()], (int) s.getHitbox().x - xLvlOffset - WOLF_DRAWOFFSET_X + s.flipX(),
+						(int) s.getHitbox().y - WOLF_DRAWOFFSET_Y + (int) s.getPushDrawOffset(), WOLF_WIDTH * s.flipW(), WOLF_HEIGHT, null);
 //				s.drawHitbox(g, xLvlOffset);
 //				s.drawAttackBox(g, xLvlOffset);
 			}
 	}
 
-	private void drawPinkstars(Graphics g, int xLvlOffset) {
-		for (Pinkstar p : currentLevel.getPinkstars())
+	private void drawGORDONs(Graphics g, int xLvlOffset) {
+		for (Gordon p : currentLevel.getGordons())
 			if (p.isActive()) {
-				g.drawImage(pinkstarArr[p.getState()][p.getAniIndex()], (int) p.getHitbox().x - xLvlOffset - PINKSTAR_DRAWOFFSET_X + p.flipX(),
-						(int) p.getHitbox().y - PINKSTAR_DRAWOFFSET_Y + (int) p.getPushDrawOffset(), PINKSTAR_WIDTH * p.flipW(), PINKSTAR_HEIGHT, null);
+				g.drawImage(GORDONArr[p.getState()][p.getAniIndex()], (int) p.getHitbox().x - xLvlOffset - GORDON_DRAWOFFSET_X + p.flipX(),
+						(int) p.getHitbox().y - GORDON_DRAWOFFSET_Y + (int) p.getPushDrawOffset(), GORDON_WIDTH * p.flipW(), GORDON_HEIGHT, null);
 //				p.drawHitbox(g, xLvlOffset);
 			}
 	}
 
-	private void drawCrabs(Graphics g, int xLvlOffset) {
-		for (Crabby c : currentLevel.getCrabs())
+	private void drawSnakes(Graphics g, int xLvlOffset) {
+		for (Snake c : currentLevel.getSnakes())
 			if (c.isActive()) {
 
-				g.drawImage(crabbyArr[c.getState()][c.getAniIndex()], (int) c.getHitbox().x - xLvlOffset - CRABBY_DRAWOFFSET_X + c.flipX(),
-						(int) c.getHitbox().y - CRABBY_DRAWOFFSET_Y + (int) c.getPushDrawOffset(), CRABBY_WIDTH * c.flipW(), CRABBY_HEIGHT, null);
+				g.drawImage(snakeArr[c.getState()][c.getAniIndex()], (int) c.getHitbox().x - xLvlOffset - SNAKE_DRAWOFFSET_X + c.flipX(),
+						(int) c.getHitbox().y - SNAKE_DRAWOFFSET_Y + (int) c.getPushDrawOffset(), SNAKE_WIDTH * c.flipW(), SNAKE_HEIGHT, null);
 
 //				c.drawHitbox(g, xLvlOffset);
 //				c.drawAttackBox(g, xLvlOffset);
@@ -86,7 +86,7 @@ public class EnemyManager {
 	}
 
 	public void checkEnemyHit(Rectangle2D.Float attackBox) {
-		for (Crabby c : currentLevel.getCrabs())
+		for (Snake c : currentLevel.getSnakes())
 			if (c.isActive())
 				if (c.getState() != DEAD && c.getState() != HIT)
 					if (attackBox.intersects(c.getHitbox())) {
@@ -94,7 +94,7 @@ public class EnemyManager {
 						return;
 					}
 
-		for (Pinkstar p : currentLevel.getPinkstars())
+		for (Gordon p : currentLevel.getGordons())
 			if (p.isActive()) {
 				if (p.getState() == ATTACK && p.getAniIndex() >= 3)
 					return;
@@ -107,7 +107,7 @@ public class EnemyManager {
 				}
 			}
 
-		for (Shark s : currentLevel.getSharks())
+		for (Wolf s : currentLevel.getWolfs())
 			if (s.isActive()) {
 				if (s.getState() != DEAD && s.getState() != HIT)
 					if (attackBox.intersects(s.getHitbox())) {
@@ -118,9 +118,9 @@ public class EnemyManager {
 	}
 
 	private void loadEnemyImgs() {
-		crabbyArr = getImgArr(LoadSave.GetSpriteAtlas(LoadSave.CRABBY_SPRITE), 9, 5, CRABBY_WIDTH_DEFAULT, CRABBY_HEIGHT_DEFAULT);
-		pinkstarArr = getImgArr(LoadSave.GetSpriteAtlas(LoadSave.PINKSTAR_ATLAS), 8, 5, PINKSTAR_WIDTH_DEFAULT, PINKSTAR_HEIGHT_DEFAULT);
-		sharkArr = getImgArr(LoadSave.GetSpriteAtlas(LoadSave.SHARK_ATLAS), 8, 5, SHARK_WIDTH_DEFAULT, SHARK_HEIGHT_DEFAULT);
+		snakeArr = getImgArr(LoadSave.GetSpriteAtlas(LoadSave.SNAKE), 6, 5, SNAKE_WIDTH_DEFAULT, SNAKE_HEIGHT_DEFAULT);
+		GORDONArr = getImgArr(LoadSave.GetSpriteAtlas(LoadSave.GORDON), 8, 5, GORDON_WIDTH_DEFAULT, GORDON_HEIGHT_DEFAULT);
+		WOLFArr = getImgArr(LoadSave.GetSpriteAtlas(LoadSave.WOLF), 7, 5, WOLF_WIDTH_DEFAULT, WOLF_HEIGHT_DEFAULT);
 	}
 
 	private BufferedImage[][] getImgArr(BufferedImage atlas, int xSize, int ySize, int spriteW, int spriteH) {
@@ -132,11 +132,11 @@ public class EnemyManager {
 	}
 
 	public void resetAllEnemies() {
-		for (Crabby c : currentLevel.getCrabs())
+		for (Snake c : currentLevel.getSnakes())
 			c.resetEnemy();
-		for (Pinkstar p : currentLevel.getPinkstars())
+		for (Gordon p : currentLevel.getGordons())
 			p.resetEnemy();
-		for (Shark s : currentLevel.getSharks())
+		for (Wolf s : currentLevel.getWolfs())
 			s.resetEnemy();
 	}
 

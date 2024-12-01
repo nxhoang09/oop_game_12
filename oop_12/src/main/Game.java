@@ -40,8 +40,6 @@ public class Game implements Runnable {
         new GameWindow(gamePanel);
         gamePanel.requestFocusInWindow();
         startGameLoop();
-        //test 3
-        //test 7
     }
 
     private void initClasses() {

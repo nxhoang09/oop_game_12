@@ -134,9 +134,10 @@ public class Constants {
 	}
 
 	public static class EnemyConstants {
-		public static final int CRABBY = 0;
-		public static final int PINKSTAR = 1;
-		public static final int SHARK = 2;
+		public static final int SNAKE = 0;
+//		public static final int CRABBY = 0;
+		public static final int GORDON = 1;
+		public static final int WOLF = 2;
 
 		public static final int IDLE = 0;
 		public static final int RUNNING = 1;
@@ -144,45 +145,57 @@ public class Constants {
 		public static final int HIT = 3;
 		public static final int DEAD = 4;
 
-		public static final int CRABBY_WIDTH_DEFAULT = 72;
-		public static final int CRABBY_HEIGHT_DEFAULT = 32;
-		public static final int CRABBY_WIDTH = (int) (CRABBY_WIDTH_DEFAULT * Game.SCALE);
-		public static final int CRABBY_HEIGHT = (int) (CRABBY_HEIGHT_DEFAULT * Game.SCALE);
-		public static final int CRABBY_DRAWOFFSET_X = (int) (26 * Game.SCALE);
-		public static final int CRABBY_DRAWOFFSET_Y = (int) (9 * Game.SCALE);
+		public static final int SNAKE_WIDTH_DEFAULT = 64;
+		public static final int SNAKE_HEIGHT_DEFAULT = 64;
+		public static final int SNAKE_WIDTH = (int) (SNAKE_WIDTH_DEFAULT * Game.SCALE);
+		public static final int SNAKE_HEIGHT = (int) (SNAKE_HEIGHT_DEFAULT * Game.SCALE);
+		public static final int SNAKE_DRAWOFFSET_X = (int) (8 * Game.SCALE);
+		public static final int SNAKE_DRAWOFFSET_Y = (int) (21 * Game.SCALE);
 
-		public static final int PINKSTAR_WIDTH_DEFAULT = 34;
-		public static final int PINKSTAR_HEIGHT_DEFAULT = 30;
-		public static final int PINKSTAR_WIDTH = (int) (PINKSTAR_WIDTH_DEFAULT * Game.SCALE);
-		public static final int PINKSTAR_HEIGHT = (int) (PINKSTAR_HEIGHT_DEFAULT * Game.SCALE);
-		public static final int PINKSTAR_DRAWOFFSET_X = (int) (9 * Game.SCALE);
-		public static final int PINKSTAR_DRAWOFFSET_Y = (int) (7 * Game.SCALE);
+		public static final int GORDON_WIDTH_DEFAULT = 128;
+		public static final int GORDON_HEIGHT_DEFAULT = 128;
+		public static final int GORDON_WIDTH = (int) (GORDON_WIDTH_DEFAULT * Game.SCALE);
+		public static final int GORDON_HEIGHT = (int) (GORDON_HEIGHT_DEFAULT * Game.SCALE);
+		public static final int GORDON_DRAWOFFSET_X = (int) (9 * Game.SCALE);
+		public static final int GORDON_DRAWOFFSET_Y = (int) (7 * Game.SCALE);
 
-		public static final int SHARK_WIDTH_DEFAULT = 34;
-		public static final int SHARK_HEIGHT_DEFAULT = 30;
-		public static final int SHARK_WIDTH = (int) (SHARK_WIDTH_DEFAULT * Game.SCALE);
-		public static final int SHARK_HEIGHT = (int) (SHARK_HEIGHT_DEFAULT * Game.SCALE);
-		public static final int SHARK_DRAWOFFSET_X = (int) (8 * Game.SCALE);
-		public static final int SHARK_DRAWOFFSET_Y = (int) (6 * Game.SCALE);
+		public static final int WOLF_WIDTH_DEFAULT = 64;
+		public static final int WOLF_HEIGHT_DEFAULT = 64;
+		public static final int WOLF_WIDTH = (int) (WOLF_WIDTH_DEFAULT * Game.SCALE);
+		public static final int WOLF_HEIGHT = (int) (WOLF_HEIGHT_DEFAULT * Game.SCALE);
+		public static final int WOLF_DRAWOFFSET_X = (int) (8 * Game.SCALE);
+		public static final int WOLF_DRAWOFFSET_Y = (int) (40 * Game.SCALE);
 
 		public static int GetSpriteAmount(int enemy_type, int enemy_state) {
 			switch (enemy_state) {
 
 			case IDLE: {
-				if (enemy_type == CRABBY)
-					return 9;
-				else if (enemy_type == PINKSTAR || enemy_type == SHARK)
+//				if (enemy_type == CRABBY)
+//					return 9;
+				if (enemy_type == GORDON)
 					return 8;
+				else if (enemy_type == SNAKE || enemy_type == WOLF)
+					return 6;
 			}
 			case RUNNING:
+				if(enemy_type == WOLF)
+					return 5;
 				return 6;
 			case ATTACK:
-				if (enemy_type == SHARK)
-					return 8;
+				if (enemy_type == WOLF)
+					return 5;
+				else if(enemy_type == SNAKE)
+					return 6;
 				return 7;
 			case HIT:
+				if (enemy_type == SNAKE)
+					return 6;
 				return 4;
 			case DEAD:
+				if (enemy_type == SNAKE)
+					return 6;
+				else if(enemy_type == WOLF)
+					return 7;
 				return 5;
 			}
 
@@ -192,9 +205,11 @@ public class Constants {
 
 		public static int GetMaxHealth(int enemy_type) {
 			switch (enemy_type) {
-			case CRABBY:
+			case SNAKE:
 				return 40;
-			case PINKSTAR, SHARK:
+//			case CRABBY:
+//				return 40;
+			case GORDON, WOLF:
 				return 40;
 			default:
 				return 1;
@@ -203,11 +218,13 @@ public class Constants {
 
 		public static int GetEnemyDmg(int enemy_type) {
 			switch (enemy_type) {
-			case CRABBY:
+			case SNAKE:
 				return 15;
-			case PINKSTAR:
+//			case CRABBY:
+//				return 15;
+			case GORDON:
 				return 20;
-			case SHARK:
+			case WOLF:
 				return 25;
 			default:
 				return 0;
