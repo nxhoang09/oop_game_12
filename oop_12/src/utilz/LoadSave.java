@@ -20,8 +20,7 @@ public class LoadSave {
 //    public static final String CRABBY_SPRITE = "crabby_sprite.png";
     public static final String GORDON = "Gordon(128x128).png";
     public static final String WOLF = "Wolf(64x64).png";
-    public static final String SNAKE = "snake(64x64).png";
-    public static final String BAT = "bat(80x80).png";
+    public static final String SNAKE = "black_enemies(64x64).png";
 
     public static final String QS_menu = "QS_menu.png";
     public static final String QS_BUTTON = "QSimg.png";

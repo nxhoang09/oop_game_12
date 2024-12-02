@@ -146,11 +146,11 @@ public class Constants {
 		public static final int DEAD = 4;
 
 		public static final int SNAKE_WIDTH_DEFAULT = 64;
-		public static final int SNAKE_HEIGHT_DEFAULT = 64;
+		public static final int SNAKE_HEIGHT_DEFAULT = 63;
 		public static final int SNAKE_WIDTH = (int) (SNAKE_WIDTH_DEFAULT * Game.SCALE);
 		public static final int SNAKE_HEIGHT = (int) (SNAKE_HEIGHT_DEFAULT * Game.SCALE);
 		public static final int SNAKE_DRAWOFFSET_X = (int) (8 * Game.SCALE);
-		public static final int SNAKE_DRAWOFFSET_Y = (int) (21 * Game.SCALE);
+		public static final int SNAKE_DRAWOFFSET_Y = (int) (18 * Game.SCALE);
 
 		public static final int GORDON_WIDTH_DEFAULT = 128;
 		public static final int GORDON_HEIGHT_DEFAULT = 128;
