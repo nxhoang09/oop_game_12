@@ -152,12 +152,12 @@ public class Constants {
 		public static final int SNAKE_DRAWOFFSET_X = (int) (8 * Game.SCALE);
 		public static final int SNAKE_DRAWOFFSET_Y = (int) (18 * Game.SCALE);
 
-		public static final int GORDON_WIDTH_DEFAULT = 128;
-		public static final int GORDON_HEIGHT_DEFAULT = 128;
+		public static final int GORDON_WIDTH_DEFAULT = 96;
+		public static final int GORDON_HEIGHT_DEFAULT = 96;
 		public static final int GORDON_WIDTH = (int) (GORDON_WIDTH_DEFAULT * Game.SCALE);
 		public static final int GORDON_HEIGHT = (int) (GORDON_HEIGHT_DEFAULT * Game.SCALE);
 		public static final int GORDON_DRAWOFFSET_X = (int) (9 * Game.SCALE);
-		public static final int GORDON_DRAWOFFSET_Y = (int) (7 * Game.SCALE);
+		public static final int GORDON_DRAWOFFSET_Y = (int) (70 * Game.SCALE);
 
 		public static final int WOLF_WIDTH_DEFAULT = 64;
 		public static final int WOLF_HEIGHT_DEFAULT = 64;
@@ -207,10 +207,10 @@ public class Constants {
 			switch (enemy_type) {
 			case SNAKE:
 				return 40;
-//			case CRABBY:
-//				return 40;
-			case GORDON, WOLF:
+			case WOLF:
 				return 40;
+            case GORDON:
+                return 60;
 			default:
 				return 1;
 			}
@@ -220,8 +220,6 @@ public class Constants {
 			switch (enemy_type) {
 			case SNAKE:
 				return 15;
-//			case CRABBY:
-//				return 15;
 			case GORDON:
 				return 20;
 			case WOLF:

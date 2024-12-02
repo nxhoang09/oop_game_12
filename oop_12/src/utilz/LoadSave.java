@@ -18,7 +18,7 @@ public class LoadSave {
     public static final String PLAYER_WARRIOR = "player_warrior.png";
     //Enemies
 //    public static final String CRABBY_SPRITE = "crabby_sprite.png";
-    public static final String GORDON = "Gordon(128x128).png";
+    public static final String GORDON = "gordon(96x96).png";
     public static final String WOLF = "Wolf(64x64).png";
     public static final String SNAKE = "black_enemies(64x64).png";
 
