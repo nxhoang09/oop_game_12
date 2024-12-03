@@ -7,15 +7,15 @@ import static utilz.Constants.PlayerConstants.*;
 
 public enum PlayerCharacter {
 
-    SAMURAI(10, 16, 10, 10, 7, 4, 4,
+    SAMURAI(10, 16, 10, 10, 4, 4, 4,
             0, 3, 0, 0, 1, 2, 2,
             LoadSave.PLAYER_SAMURAI, 4, 16, 96, 75,
-            18, 25, 35, 33),
+            19, 30, 35, 27),
     HERO(7, 8, 3, 2, 6, 4, 12,
             0, 1, 2, 3, 4, 5, 6,
             LoadSave.PLAYER_HERO, 7, 12, 96, 84,
             25, 30, 35, 30),
-    WARRIOR(6, 6, 6, 6, 6, 6, 6,
+    WARRIOR(6, 6, 6, 6, 4, 3, 6,
             0, 1, 7, 7, 3, 4, 5,
             LoadSave.PLAYER_WARRIOR, 17, 6, 69, 44,
             18, 25, 17, 18);
