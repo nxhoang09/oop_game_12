@@ -3,7 +3,6 @@ package audio;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.BooleanControl;
@@ -140,7 +139,8 @@ public class AudioPlayer {
 
 		FloatControl gainControl = (FloatControl) songs[currentSongId].getControl(FloatControl.Type.MASTER_GAIN);
 		float range = gainControl.getMaximum() - gainControl.getMinimum();
-		float gain = (range * volume) + gainControl.getMinimum();
+		float gain = (float)(45f*Math.pow(volume,0.5)) +-39f;
+
 		gainControl.setValue(gain);
 
 	}
@@ -149,7 +149,8 @@ public class AudioPlayer {
 		for (Clip c : effects) {
 			FloatControl gainControl = (FloatControl) c.getControl(FloatControl.Type.MASTER_GAIN);
 			float range = gainControl.getMaximum() - gainControl.getMinimum();
-			float gain = (range * volume) + gainControl.getMinimum();
+			float gain = (float)(45f*Math.pow(volume,0.5)) +-39f;
+
 			gainControl.setValue(gain);
 		}
 	}

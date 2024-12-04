@@ -32,18 +32,18 @@ public class Player extends Entity {
 
     private int statusBarWidth = (int) (170 * Game.SCALE);
     private int statusBarHeight = (int) (70 * Game.SCALE);
-    private int statusBarX = (int) (10 * Game.SCALE);
+    private int statusBarX = (int) (-10 * Game.SCALE);
     private int statusBarY = (int) (10 * Game.SCALE);
 
-    private int healthBarWidth = (int) (100 * Game.SCALE);
+    private int healthBarWidth = (int) (90 * Game.SCALE);
     private int healthBarHeight = (int) (14 * Game.SCALE);
-    private int healthBarXStart = (int) (62 * Game.SCALE);
+    private int healthBarXStart = (int) (72 * Game.SCALE);
     private int healthBarYStart = (int) (50 * Game.SCALE);
     private int healthWidth = healthBarWidth;
 
-    private int powerBarWidth = (int) (65 * Game.SCALE);
+    private int powerBarWidth = (int) (55 * Game.SCALE);
     private int powerBarHeight = (int) (10 * Game.SCALE);
-    private int powerBarXStart = (int) (72 * Game.SCALE);
+    private int powerBarXStart = (int) (82 * Game.SCALE);
     private int powerBarYStart = (int) (34 * Game.SCALE);
     private int powerWidth = powerBarWidth;
     private int powerMaxValue = 200;
