@@ -1,9 +1,8 @@
 package main;
 
-import java.awt.Graphics;
-
 import audio.AudioPlayer;
 import gamestates.*;
+import java.awt.Graphics;
 import ui.AudioOptions;
 
 public class Game implements Runnable {

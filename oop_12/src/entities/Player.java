@@ -1,19 +1,17 @@
 package entities;
 
-import static utilz.Constants.PlayerConstants.*;
-import static utilz.HelpMethods.*;
-import static utilz.Constants.*;
-import static utilz.Constants.Directions.*;
-
+import audio.AudioPlayer;
+import gamestates.Playing;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
-
-import audio.AudioPlayer;
-import gamestates.Playing;
 import main.Game;
+import static utilz.Constants.*;
+import static utilz.Constants.Directions.*;
+import static utilz.Constants.PlayerConstants.*;
+import static utilz.HelpMethods.*;
 import utilz.LoadSave;
 
 public class Player extends Entity {
@@ -32,20 +30,20 @@ public class Player extends Entity {
     // StatusBarUI
     private BufferedImage statusBarImg;
 
-    private int statusBarWidth = (int) (192 * Game.SCALE);
-    private int statusBarHeight = (int) (58 * Game.SCALE);
+    private int statusBarWidth = (int) (170 * Game.SCALE);
+    private int statusBarHeight = (int) (70 * Game.SCALE);
     private int statusBarX = (int) (10 * Game.SCALE);
     private int statusBarY = (int) (10 * Game.SCALE);
 
-    private int healthBarWidth = (int) (150 * Game.SCALE);
-    private int healthBarHeight = (int) (4 * Game.SCALE);
-    private int healthBarXStart = (int) (34 * Game.SCALE);
-    private int healthBarYStart = (int) (14 * Game.SCALE);
+    private int healthBarWidth = (int) (100 * Game.SCALE);
+    private int healthBarHeight = (int) (14 * Game.SCALE);
+    private int healthBarXStart = (int) (62 * Game.SCALE);
+    private int healthBarYStart = (int) (50 * Game.SCALE);
     private int healthWidth = healthBarWidth;
 
-    private int powerBarWidth = (int) (104 * Game.SCALE);
-    private int powerBarHeight = (int) (2 * Game.SCALE);
-    private int powerBarXStart = (int) (44 * Game.SCALE);
+    private int powerBarWidth = (int) (65 * Game.SCALE);
+    private int powerBarHeight = (int) (10 * Game.SCALE);
+    private int powerBarXStart = (int) (72 * Game.SCALE);
     private int powerBarYStart = (int) (34 * Game.SCALE);
     private int powerWidth = powerBarWidth;
     private int powerMaxValue = 200;
@@ -230,16 +228,18 @@ public class Player extends Entity {
     }
 
     private void drawUI(Graphics g) {
-        // Background ui
-        g.drawImage(statusBarImg, statusBarX, statusBarY, statusBarWidth, statusBarHeight, null);
+        
 
         // Health bar
-        g.setColor(Color.red);
+        g.setColor(Color.RED);
         g.fillRect(healthBarXStart + statusBarX, healthBarYStart + statusBarY, healthWidth, healthBarHeight);
 
         // Power Bar
         g.setColor(Color.yellow);
         g.fillRect(powerBarXStart + statusBarX, powerBarYStart + statusBarY, powerWidth, powerBarHeight);
+
+        // Background ui
+        g.drawImage(statusBarImg, statusBarX, statusBarY, statusBarWidth, statusBarHeight, null);
     }
 
     private void updateAnimationTick() {

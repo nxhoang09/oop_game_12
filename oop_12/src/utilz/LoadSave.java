@@ -1,14 +1,12 @@
 package utilz;
 
 import entities.PlayerCharacter;
-
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
-
 import javax.imageio.ImageIO;
 
 public class LoadSave {
@@ -25,8 +23,8 @@ public class LoadSave {
     public static final String QS_menu = "QS_menu.png";
     public static final String QS_BUTTON = "QSimg.png";
     public static final String LEVEL_ATLAS = "outside_sprites.png";
-    public static final String MENU_BUTTONS = "buttonatlas.png";
-    public static final String MENU_BACKGROUND = "menubackground.png";
+    public static final String MENU_BUTTONS = "button_atlas.png";
+    public static final String MENU_BACKGROUND = "menu_background.png";
     public static final String PAUSE_BACKGROUND = "pause_menu.png";
     public static final String SOUND_BUTTONS = "sound_button.png";
     public static final String URM_BUTTONS = "urm_buttons.png";
@@ -42,7 +40,7 @@ public class LoadSave {
     public static final String TRAP_ATLAS = "trap_atlas.png";
     public static final String CANNON_ATLAS = "cannon_atlas.png";
     public static final String CANNON_BALL = "ball.png";
-    public static final String DEATH_SCREEN = "death_screen.png";
+    public static final String DEATH_SCREEN = "deathscreen.png";
     public static final String OPTIONS_MENU = "options_background.png";
     public static final String QUESTION_ATLAS = "question_atlas.png";
     public static final String EXCLAMATION_ATLAS = "exclamation_atlas.png";
