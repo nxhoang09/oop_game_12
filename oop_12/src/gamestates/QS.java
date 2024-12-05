@@ -23,9 +23,9 @@ public class QS extends State implements Statemethods {
     private void loadEntities() {
         entitiesList = new ArrayList<>();
 //        entitiesList.add(new ShowEntity(getIdleAni(LoadSave.GetSpriteAtlas(LoadSave.PLAYER_PIRATE), 5, 64, 40), (int) (Game.GAME_WIDTH * 0.60), (int) (Game.GAME_HEIGHT * 0.55)));
-        entitiesList.add(new ShowEntity(getIdleAni(LoadSave.GetSpriteAtlas(LoadSave.SNAKE), 6, 64, 64), (int) (Game.GAME_WIDTH * 0.70), (int) (Game.GAME_HEIGHT * 0.55)));
-        entitiesList.add(new ShowEntity(getIdleAni(LoadSave.GetSpriteAtlas(LoadSave.GORDON), 10, 96, 96), (int) (Game.GAME_WIDTH * 0.65), (int) (Game.GAME_HEIGHT * 0.75)));
-        entitiesList.add(new ShowEntity(getIdleAni(LoadSave.GetSpriteAtlas(LoadSave.WOLF), 7, 64, 64), (int) (Game.GAME_WIDTH * 0.75), (int) (Game.GAME_HEIGHT * 0.75)));
+        entitiesList.add(new ShowEntity(getIdleAni(LoadSave.GetSpriteAtlas(LoadSave.SNAKE), 6, 64, 64), (int) (Game.GAME_WIDTH * 0.12), (int) (Game.GAME_HEIGHT * 0.11)));
+        entitiesList.add(new ShowEntity(getIdleAni(LoadSave.GetSpriteAtlas(LoadSave.GORDON), 5, 96, 96), (int) (Game.GAME_WIDTH * 0.60), (int) (Game.GAME_HEIGHT * 0.20)));
+        entitiesList.add(new ShowEntity(getIdleAni(LoadSave.GetSpriteAtlas(LoadSave.WOLF), 6, 64, 64), (int) (Game.GAME_WIDTH * 0.15), (int) (Game.GAME_HEIGHT * 0.57)));
     }
 
     private BufferedImage[] getIdleAni(BufferedImage atlas, int spritesAmount, int width, int height) {
@@ -37,18 +37,21 @@ public class QS extends State implements Statemethods {
 
     @Override
     public void update() {     
-        for (ShowEntity se : entitiesList)
-            se.update();
+        
         if (flag) {
             backgroundImg = LoadSave.GetSpriteAtlas(LoadSave.QS1_img);
+            for (ShowEntity se : entitiesList)
+            se.update();
         }
     }
 
     @Override
     public void draw(Graphics g) {
         g.drawImage(backgroundImg, 0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT, null);
-        for (ShowEntity se : entitiesList)
+        if(flag){
+            for (ShowEntity se : entitiesList)
             se.draw(g);
+        }   
     }
 
     @Override
