@@ -10,7 +10,7 @@ import main.Game;
 import utilz.LoadSave;
 
 public class QS extends State implements Statemethods {
-
+    boolean flag = false;
     private BufferedImage backgroundImg;
     private ArrayList<ShowEntity> entitiesList;
 
@@ -36,10 +36,12 @@ public class QS extends State implements Statemethods {
     }
 
     @Override
-    public void update() {
-        
+    public void update() {     
         for (ShowEntity se : entitiesList)
             se.update();
+        if (flag) {
+            backgroundImg = LoadSave.GetSpriteAtlas(LoadSave.QS1_img);
+        }
     }
 
     @Override
@@ -51,10 +53,20 @@ public class QS extends State implements Statemethods {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
-          
-            setGamestate(Gamestate.MENU);
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_ESCAPE:         
+                flag = false;    
+                backgroundImg = LoadSave.GetSpriteAtlas(LoadSave.QS_menu);
+                setGamestate(Gamestate.MENU);  
+                          
+                break;
+            case KeyEvent.VK_ENTER:
+                flag = true;
+                break;
+            default:
+                break;
         }
+       
     }
 
     @Override
