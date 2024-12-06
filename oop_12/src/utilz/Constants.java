@@ -192,9 +192,9 @@ public class Constants {
 					return 6;
 				return 4;
 			case DEAD:
-				if (enemy_type == SNAKE)
-					return 6;
-				else if(enemy_type == WOLF)
+				// if (enemy_type == SNAKE)
+				// 	return 6;
+				 if(enemy_type == WOLF)
 					return 7;
 				return 5;
 			}

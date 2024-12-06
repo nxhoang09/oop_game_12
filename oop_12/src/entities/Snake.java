@@ -11,7 +11,7 @@ public class Snake extends Enemy {
 	public Snake(float x, float y) {
 		super(x, y, SNAKE_WIDTH, SNAKE_HEIGHT, SNAKE);
 		initHitbox(22, 28);
-		initAttackBox(82, 19, 30);
+		initAttackBox(82, 19, 25);
 	}
 
 	public void update(int[][] lvlData, Playing playing) {
@@ -53,7 +53,7 @@ public class Snake extends Enemy {
 					checkPlayerHit(attackBox, playing.getPlayer());
 				break;
 			case HIT:
-				if (aniIndex <= GetSpriteAmount(enemyType, state) - 2)
+				if (aniIndex <= GetSpriteAmount(enemyType, state) - 3)
 					pushBack(pushBackDir, lvlData, 2f);
 				updatePushBackDrawOffset();
 				break;
