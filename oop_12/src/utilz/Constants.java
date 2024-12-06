@@ -190,6 +190,8 @@ public class Constants {
 			case HIT:
 				if (enemy_type == SNAKE)
 					return 6;
+				else if (enemy_type == GORDON)
+					return 3;
 				return 4;
 			case DEAD:
 				// if (enemy_type == SNAKE)
