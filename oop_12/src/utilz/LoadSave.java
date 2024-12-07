@@ -45,10 +45,10 @@ public class LoadSave {
     public static final String CANNON_ATLAS = "cannon_atlas.png";
     public static final String CANNON_BALL = "ball.png";
     public static final String DEATH_SCREEN = "deathscreen.png";
-    public static final String OPTIONS_MENU = "options_background.png";
+    public static final String OPTIONS_MENU = "options_background1.png";
     public static final String QUESTION_ATLAS = "question_atlas.png";
     public static final String EXCLAMATION_ATLAS = "exclamation_atlas.png";
-    public static final String CREDITS = "credits_list.png";
+    public static final String CREDITS = "credits_list1.png";
     public static final String GRASS_ATLAS = "grass_atlas.png";
     public static final String DECOR_ONE_ATLAS = "decor_one_atlas.png";
     public static final String DECOR_TWO_ATLAS = "decor_two_atlas.png";
