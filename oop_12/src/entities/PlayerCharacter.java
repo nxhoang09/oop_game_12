@@ -14,7 +14,7 @@ public enum PlayerCharacter {
     HERO(7, 8, 3, 2, 6, 4, 12,
             0, 1, 2, 3, 4, 5, 6,
             LoadSave.PLAYER_HERO, 7, 12, 96, 84,
-            25, 32, 35, 30),
+            25, 30, 35, 30),
     WARRIOR(9, 6, 9, 9, 6, 4, 23,
             0, 1, 0, 0, 2, 3, 4,
             LoadSave.PLAYER_WARRIOR, 5, 23, 80, 80,
