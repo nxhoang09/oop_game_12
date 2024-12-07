@@ -72,21 +72,49 @@ public class LoadSave {
 
     public static BufferedImage GetSpriteAtlas(String fileName) {
         BufferedImage img = null;
-        InputStream is = LoadSave.class.getResourceAsStream("/" + fileName);
+        InputStream is = null;
+        
         try {
+            // In ra đường dẫn đầy đủ để kiểm tra
+            String fullPath = "/" + fileName;
+            System.out.println("Attempting to load resource: " + fullPath);
+            
+            // Thử lấy input stream
+            is = LoadSave.class.getResourceAsStream(fullPath);
+            
+            // Kiểm tra xem input stream có null không
+            if (is == null) {
+                System.err.println("ERROR: Cannot find resource - " + fullPath);
+                // In ra danh sách các tài nguyên để kiểm tra
+             //   printAvailableResources();
+                return null;
+            }
+            
+            // Đọc ảnh
             img = ImageIO.read(is);
-
+            
+            // Kiểm tra xem ảnh có được load thành công không
+            if (img == null) {
+                System.err.println("ERROR: Failed to read image - " + fullPath);
+            }
+            
         } catch (IOException e) {
+            System.err.println("IOException when loading: " + fileName);
             e.printStackTrace();
         } finally {
-            try {
-                is.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+            // Đóng input stream an toàn
+            if (is != null) {
+                try {
+                    is.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
+        
         return img;
     }
+
 
     public static BufferedImage[] GetAllLevels() {
         URL url = LoadSave.class.getResource("/lvls");
