@@ -22,7 +22,7 @@ public class Credits extends State implements Statemethods {
         creditsImg = LoadSave.GetSpriteAtlas(LoadSave.CREDITS);
         bgW = (int) (creditsImg.getWidth() * Game.SCALE);
         bgH = (int) (creditsImg.getHeight() * Game.SCALE);
-        bgX = Game.GAME_WIDTH / 2 - bgW / 2;
+        bgX = (int)((Game.GAME_WIDTH / 2 - bgW / 2) *0.9) ;
         bgY = Game.GAME_HEIGHT;
         loadEntities();
     }
@@ -30,9 +30,9 @@ public class Credits extends State implements Statemethods {
     private void loadEntities() {
         entitiesList = new ArrayList<>();
 //        entitiesList.add(new ShowEntity(getIdleAni(LoadSave.GetSpriteAtlas(LoadSave.PLAYER_PIRATE), 5, 64, 40), (int) (Game.GAME_WIDTH * 0.05), (int) (Game.GAME_HEIGHT * 0.8)));
-        entitiesList.add(new ShowEntity(getIdleAni(LoadSave.GetSpriteAtlas(LoadSave.SNAKE), 6, 64, 64), (int) (Game.GAME_WIDTH * 0.15), (int) (Game.GAME_HEIGHT * 0.75)));
-        entitiesList.add(new ShowEntity(getIdleAni(LoadSave.GetSpriteAtlas(LoadSave.GORDON), 10, 96, 96), (int) (Game.GAME_WIDTH * 0.7), (int) (Game.GAME_HEIGHT * 0.75)));
-        entitiesList.add(new ShowEntity(getIdleAni(LoadSave.GetSpriteAtlas(LoadSave.WOLF), 7, 64, 64), (int) (Game.GAME_WIDTH * 0.8), (int) (Game.GAME_HEIGHT * 0.8)));
+        entitiesList.add(new ShowEntity(getIdleAni(LoadSave.GetSpriteAtlas(LoadSave.SNAKE), 6, 64, 64), (int) (Game.GAME_WIDTH * 0.15), (int) (Game.GAME_HEIGHT * 0.65)));
+        entitiesList.add(new ShowEntity(getIdleAni(LoadSave.GetSpriteAtlas(LoadSave.GORDON), 10, 96, 96), (int) (Game.GAME_WIDTH * 0.7), (int) (Game.GAME_HEIGHT * 0.65)));
+        entitiesList.add(new ShowEntity(getIdleAni(LoadSave.GetSpriteAtlas(LoadSave.WOLF), 7, 64, 64), (int) (Game.GAME_WIDTH * 0.8), (int) (Game.GAME_HEIGHT * 0.7)));
     }
 
     private BufferedImage[] getIdleAni(BufferedImage atlas, int spritesAmount, int width, int height) {
@@ -44,7 +44,7 @@ public class Credits extends State implements Statemethods {
 
     @Override
     public void update() {
-        bgYFloat -= 0.2f;
+        bgYFloat -= 0.4f;
         for (ShowEntity se : entitiesList)
             se.update();
     }
@@ -54,8 +54,8 @@ public class Credits extends State implements Statemethods {
         g.drawImage(backgroundImg, 0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT, null);
         g.drawImage(creditsImg, bgX, (int) (bgY + bgYFloat), bgW, bgH, null);
 
-        for (ShowEntity se : entitiesList)
-            se.draw(g);
+        // for (ShowEntity se : entitiesList)
+        //     se.draw(g);
     }
 
     @Override
