@@ -9,9 +9,9 @@ public class Cannon extends GameObject {
 	public Cannon(int x, int y, int objType) {
 		super(x, y, objType);
 		tileY = y / Game.TILES_SIZE;
-		initHitbox(40, 26);
-//		hitbox.x -= (int) (1 * Game.SCALE);
-		hitbox.y += (int) (6 * Game.SCALE);
+		initHitbox(62, 46);
+		hitbox.x -= (int) (25 * Game.SCALE);
+		hitbox.y -= (int) (10 * Game.SCALE);
 	}
 
 	public void update() {
