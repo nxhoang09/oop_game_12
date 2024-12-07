@@ -17,7 +17,7 @@ public class Gordon extends Enemy {
 
 	public Gordon(float x, float y) {
 		super(x, y, GORDON_WIDTH, GORDON_HEIGHT, GORDON);
-		initHitbox(17, 21);
+		initHitbox(50, 23);
 	}
 
 	public void update(int[][] lvlData, Playing playing) {

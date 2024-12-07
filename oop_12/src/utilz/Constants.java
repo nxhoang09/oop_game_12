@@ -212,7 +212,7 @@ public class Constants {
 			case WOLF:
 				return 40;
             case GORDON:
-                return 60;
+                return 80;
 			default:
 				return 1;
 			}
@@ -223,9 +223,9 @@ public class Constants {
 			case SNAKE:
 				return 15;
 			case GORDON:
-				return 20;
-			case WOLF:
 				return 25;
+			case WOLF:
+				return 20;
 			default:
 				return 0;
 			}
