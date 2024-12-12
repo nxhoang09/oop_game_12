@@ -68,7 +68,7 @@ public class EnemyManager {
 			if (p.isActive()) {
 				g.drawImage(gordonArr[p.getState()][p.getAniIndex()], (int) p.getHitbox().x - xLvlOffset - GORDON_DRAWOFFSET_X + p.flipX(),
 						(int) p.getHitbox().y - GORDON_DRAWOFFSET_Y + (int) p.getPushDrawOffset(), GORDON_WIDTH * p.flipW(), GORDON_HEIGHT, null);
-				p.drawHitbox(g, xLvlOffset);
+//				p.drawHitbox(g, xLvlOffset);
 			}
 	}
 
