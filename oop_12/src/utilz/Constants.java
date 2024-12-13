@@ -250,7 +250,7 @@ public class Constants {
 			public static final int B_WIDTH_DEFAULT = 136;
 			public static final int B_HEIGHT_DEFAULT = 54;
 			public static final int B_WIDTH = (int) (B_WIDTH_DEFAULT * Game.SCALE);
-			public static final int B_HEIGHT = (int) (B_HEIGHT_DEFAULT * Game.SCALE);
+			public static final int B_HEIGHT = (int) (B_HEIGHT_DEFAULT * Game.SCALE*0.88);
 		}
 		public static class QSButton {
 			public static final int QS_WIDTH_DEFAULT = 54;
