@@ -4,7 +4,6 @@ import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
-
 import main.Game;
 import ui.MenuButton;
 import ui.QSButton;
@@ -20,7 +19,7 @@ public class Menu extends State implements Statemethods {
     public Menu(Game game) {
         super(game);
         loadButtons();
-        loadBackground();
+        //loadBackground();
         backgroundImgPink = LoadSave.GetSpriteAtlas(LoadSave.MENU_BACKGROUND_IMG);
 
     }
