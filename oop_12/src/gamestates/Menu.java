@@ -13,14 +13,16 @@ public class Menu extends State implements Statemethods {
 
     private MenuButton[] buttons = new MenuButton[4];
     private QSButton qs =  new QSButton((int) (Game.GAME_WIDTH  - 70 * Game.SCALE) ,  (int) (Game.GAME_HEIGHT - 70 * Game.SCALE) ,  Gamestate.QS);
-    private BufferedImage backgroundImg, backgroundImgPink;
+    private BufferedImage backgroundImg, backgroundImgPink, backgroundImglng;
     private int menuX, menuY, menuWidth, menuHeight;
+    private boolean menuflag = false  ; 
 
     public Menu(Game game) {
         super(game);
         loadButtons();
         loadBackground();
         backgroundImgPink = LoadSave.GetSpriteAtlas(LoadSave.MENU_BACKGROUND_IMG);
+        backgroundImglng = LoadSave.GetSpriteAtlas(LoadSave.LEGEND);
 
     }
 
@@ -48,11 +50,17 @@ public class Menu extends State implements Statemethods {
 
     @Override
     public void draw(Graphics g) {
+        if(!menuflag){      
+        g.drawImage(backgroundImglng, 0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT, null);
+        }
+        else{
         g.drawImage(backgroundImgPink, 0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT, null);
         g.drawImage(backgroundImg, menuX, menuY, menuWidth, menuHeight, null);
         qs.draw(g);
         for (MenuButton mb : buttons)
             mb.draw(g);
+        }
+        
     }
 
     @Override
@@ -124,6 +132,18 @@ public class Menu extends State implements Statemethods {
     @Override
     public void keyReleased(KeyEvent e) {
         // TODO Auto-generated method stub
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_ESCAPE:         
+
+                break;
+            case KeyEvent.VK_ENTER:
+                menuflag = true;
+                System.out.println("eureka");
+                break;
+            default:
+                break;
+        }
+       
 
     }
 
