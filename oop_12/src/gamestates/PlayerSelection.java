@@ -45,14 +45,14 @@ public class PlayerSelection extends State implements Statemethods {
     private void loadBackground() {
         backgroundImg = LoadSave.GetSpriteAtlas(LoadSave.MENU_BACKGROUND);
         menuWidth = (int) (backgroundImg.getWidth() * Game.SCALE*0.85);
-        menuHeight = (int) (backgroundImg.getHeight() * Game.SCALE*0.9);
+        menuHeight = (int) (backgroundImg.getHeight() * Game.SCALE*0.82);
         menuX = Game.GAME_WIDTH / 2 - menuWidth / 2;
-        menuY = (int) (25 * Game.SCALE);
+        menuY = (int) (20 * Game.SCALE);
     }
 
     private void loadButtons() {
 
-        playButton = new MenuButton(Game.GAME_WIDTH / 2, (int) (350 * Game.SCALE), 0, Gamestate.PLAYING);
+        playButton = new MenuButton(Game.GAME_WIDTH / 2, (int) (332 * Game.SCALE), 0, Gamestate.PLAYING);
 
     }
 
