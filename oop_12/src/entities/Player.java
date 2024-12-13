@@ -222,8 +222,8 @@ public class Player extends Entity {
 
     public void render(Graphics g, int lvlOffset) {
         g.drawImage(animations[playerCharacter.getRowIndex(state)][aniIndex], (int) (hitbox.x - playerCharacter.xDrawOffset) - lvlOffset + flipX, (int) (hitbox.y - playerCharacter.yDrawOffset + (int) (pushDrawOffset)), width * flipW, height, null);
-        drawHitbox(g, lvlOffset);
-		drawAttackBox(g, lvlOffset);
+        // drawHitbox(g, lvlOffset);
+		// drawAttackBox(g, lvlOffset);
         drawUI(g);
     }
 

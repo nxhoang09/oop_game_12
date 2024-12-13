@@ -58,8 +58,8 @@ public class EnemyManager {
 			if (s.isActive()) {
 				g.drawImage(wolfArr[s.getState()][s.getAniIndex()], (int) s.getHitbox().x - xLvlOffset - WOLF_DRAWOFFSET_X + s.flipX(),
 						(int) s.getHitbox().y - WOLF_DRAWOFFSET_Y + (int) s.getPushDrawOffset(), WOLF_WIDTH * s.flipW(), WOLF_HEIGHT, null);
-				s.drawHitbox(g, xLvlOffset);
-				s.drawAttackBox(g, xLvlOffset);
+				// s.drawHitbox(g, xLvlOffset);
+				// s.drawAttackBox(g, xLvlOffset);
 			}
 	}
 
@@ -79,8 +79,8 @@ public class EnemyManager {
 				g.drawImage(snakeArr[c.getState()][c.getAniIndex()], (int) c.getHitbox().x - xLvlOffset - SNAKE_DRAWOFFSET_X + c.flipX(),
 						(int) c.getHitbox().y - SNAKE_DRAWOFFSET_Y + (int) c.getPushDrawOffset(), SNAKE_WIDTH * c.flipW(), SNAKE_HEIGHT, null);
 
-				c.drawHitbox(g, xLvlOffset);
-				c.drawAttackBox(g, xLvlOffset);
+				// c.drawHitbox(g, xLvlOffset);
+				// c.drawAttackBox(g, xLvlOffset);
 			}
 
 	}
