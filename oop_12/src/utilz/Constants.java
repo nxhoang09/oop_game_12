@@ -266,7 +266,7 @@ public class Constants {
 
 		public static class URMButtons {
 			public static final int URM_DEFAULT_SIZE = 30;
-			public static final int URM_SIZE = (int) (URM_DEFAULT_SIZE * Game.SCALE *1.6f);
+			public static final int URM_SIZE = (int) (URM_DEFAULT_SIZE * Game.SCALE *1.9f);
 
 		}
 

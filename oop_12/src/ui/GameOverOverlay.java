@@ -1,15 +1,13 @@
 package ui;
 
-import static utilz.Constants.UI.URMButtons.URM_SIZE;
-
+import gamestates.Gamestate;
+import gamestates.Playing;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
-
-import gamestates.Gamestate;
-import gamestates.Playing;
 import main.Game;
+import static utilz.Constants.UI.URMButtons.URM_SIZE;
 import utilz.LoadSave;
 
 public class GameOverOverlay {
@@ -39,7 +37,7 @@ public class GameOverOverlay {
 		imgW = (int) (img.getWidth() * Game.SCALE);
 		imgH = (int) (img.getHeight() * Game.SCALE);
 		imgX = Game.GAME_WIDTH / 2 - imgW / 2;
-		imgY = (int) (100 * Game.SCALE);
+		imgY = (int) (100 * Game.SCALE + 40);
 
 	}
 

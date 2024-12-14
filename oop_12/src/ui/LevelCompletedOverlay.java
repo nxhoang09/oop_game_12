@@ -1,15 +1,14 @@
 package ui;
 
+import gamestates.Gamestate;
+import gamestates.Playing;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
-
-import gamestates.Gamestate;
-import gamestates.Playing;
 import main.Game;
-import utilz.LoadSave;
 import static utilz.Constants.UI.URMButtons.*;
+import utilz.LoadSave;
 
 public class LevelCompletedOverlay {
 
@@ -37,7 +36,7 @@ public class LevelCompletedOverlay {
 		bgW = (int) (img.getWidth() * Game.SCALE);
 		bgH = (int) (img.getHeight() * Game.SCALE);
 		bgX = Game.GAME_WIDTH / 2 - bgW / 2;
-		bgY = (int) (75 * Game.SCALE);
+		bgY = (int) (75 * Game.SCALE + 80 );
 	}
 
 	public void draw(Graphics g) {
