@@ -40,8 +40,8 @@ Trong thế giới hậu tận thế nơi hòa hợp giữa công nghệ và ph�
 ```bash
 # Clone repo
 git clone https://github.com/nxhoang09/oop_game_12.git
-
-Chạy game
-
+```
+### 🕹️ Chạy game
+Mở project trong IDE (IntelliJ IDEA hoặc Eclipse).
 Trong thư mục src -> main, tìm và mở file MainClass.java.
-Đây là file chứa phương thức main() để khởi động game.
+Chạy phương thức main() để khởi động game.
